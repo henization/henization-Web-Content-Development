@@ -1,5 +1,9 @@
 @import "reset.css";
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-weight: bold;
   padding: 0 10px;
@@ -115,11 +119,7 @@ img {
   }
 
   ul > li {
-    /* padding: 10px 25px; */
-    width: 100%;
-  }
-
-  ul > li:hover {
+    padding: 20px;
     width: 100%;
   }
 
