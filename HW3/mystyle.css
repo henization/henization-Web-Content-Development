@@ -6,7 +6,6 @@
 
 body {
   font-weight: bold;
-  padding: 0 10px;
 }
 
 h1 {
@@ -23,6 +22,7 @@ h1 {
 
   z-index: 1;
   margin-top: 10px;
+  padding: 0 10px;
 }
 
 #layout::after {
@@ -43,13 +43,11 @@ h1 {
   background-color: rgb(252, 206, 214, 0.5);
   margin: 0 auto;
 
-  width: fit-content;
+  width: 100%;
   height: fit-content;
 }
 
 #navBar > a {
-  width: 130px;
-  height: 30px;
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -97,9 +95,7 @@ img {
 }
 
 @media (max-width: 700px) {
-  /*1. navBar가 description 위에 오고 화면에 꽉차도록*/
   #layout {
-    width: auto;
     display: grid;
     grid-template-columns: auto;
     row-gap: 10px;
@@ -107,18 +103,16 @@ img {
 
   #navBar {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  #description {
-    margin-left: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
   }
 
   #navBar > a {
     padding: 20px;
-    width: 100%;
+  }
+
+  #description {
+    margin-left: 0;
   }
 
   img {
