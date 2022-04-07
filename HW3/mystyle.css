@@ -1,0 +1,121 @@
+@import "reset.css";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-weight: bold;
+}
+
+h1 {
+  background-color: antiquewhite;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+  font-size: 35px;
+}
+
+#layout {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+
+  z-index: 1;
+  margin-top: 10px;
+  padding: 0 10px;
+}
+
+#layout::after {
+  /*배경만 opacity를 주고 싶을땐 가상선택자 사용*/
+  width: 100%;
+  height: 100vh;
+  content: "";
+  background: url("cherryblossom.jpg");
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 0.4;
+}
+
+#navBar {
+  border: 3px solid pink;
+  background-color: rgb(252, 206, 214, 0.5);
+  margin: 0 auto;
+
+  width: 100%;
+  height: fit-content;
+}
+
+#navBar > a {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#navBar > a:hover {
+  background-color: rgb(255, 139, 159);
+  cursor: pointer;
+}
+
+a {
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+}
+
+#description {
+  background-color: rgba(255, 255, 255, 0.5);
+  margin-left: 15px;
+  padding: 15px;
+}
+
+#description > h3 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+#description > p {
+  margin-bottom: 8px;
+}
+
+.read {
+  color: gray;
+}
+
+#now {
+  color: red;
+}
+
+img {
+  width: 300px;
+}
+
+@media (max-width: 700px) {
+  #layout {
+    display: grid;
+    grid-template-columns: auto;
+    row-gap: 10px;
+  }
+
+  #navBar {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  #navBar > a {
+    padding: 20px;
+  }
+
+  #description {
+    margin-left: 0;
+  }
+
+  img {
+    width: 200px;
+  }
+}
